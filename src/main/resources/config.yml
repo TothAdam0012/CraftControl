@@ -1,0 +1,33 @@
+# Players who have the'craftcontrol.bypass' permission can still craft denied items.
+# Note: The bypass permission doesn't work if the recipes are removed.
+# Note2: 'Removed' recipes are only removed until the server restarts.
+# If 'deny-method' was 'REMOVE' but set back to 'DENY' and the server restarts all previously 'removed' recipes will be available.
+# Note3: OP players usually have all permissions by default. Try testing while de-opped or with a different account.
+
+# deny method possible values:
+# DENY: the recipe will be completed in the crafting window but when the player tries to craft they will get a message and crafting will be denied.
+# REMOVE: COMPLETELY REMOVES THE RECIPE(S) THAT RESULT IN 'denied-items'. CAN'T BE BYPASSED, THE RECIPE WON'T EXIST!
+deny-method: DENY
+
+# The message to send to the player when they try to craft an item they are not permitted to. Color codes can be used with the '&' prefix.
+# Setting this to an empty string '' will disable the message.
+# Has no effect if 'deny-method' is set to 'REMOVE'
+deny-message: '&oCrafting this item is not permitted!'
+
+# When the player tries to craft a denied item the inventory will close.
+# Has no effect if 'deny-method' is set to 'REMOVE'
+close-inventory-on-deny: true
+
+# List of all available items: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+# Crafting of items listed here will be denied.
+# Players can bypass this if they have the 'craftcontrol.bypass' permission.
+# As stated above, the permission bypass doesn't work if the deny method is set to remove recipes.
+denied-items:
+  - ACACIA_BOAT
+  - ACACIA_BUTTON
+  - ACACIA_CHEST_BOAT
+  - ACACIA_DOOR
+
+# Depending on 'deny-method' if set to 'DENY' then will disallow every recipe, if set to 'REMOVE' will remove every single crafting recipe.
+# As stated above, if every recipe is removed then this can't be bypassed with permissions since the recipes don't exist at all.
+deny-all-crafting-recipes: false

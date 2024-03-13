@@ -1,0 +1,4 @@
+name: CraftControl
+version: '${project.version}'
+main: hu.xm.craftcontrol.CraftControl
+api-version: '1.20'
